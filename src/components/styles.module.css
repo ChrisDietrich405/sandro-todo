@@ -131,7 +131,7 @@
   padding: 0 15px;
 }
 
-.incompleteTasks .tasksContainer form {
+.tasksContainer form {
   display: flex;
   align-items: center;
   width: 100%;
@@ -145,7 +145,7 @@
   position: relative;
 }
 
-.incompleteTasks .tasksContainer>div {
+.tasksContainer>div {
   width: 100%;
   min-height: 50px;
   height: auto;
@@ -161,7 +161,7 @@
   padding: 5px 0;
 }
 
-.incompleteTasks .tasksContainer .checkbox {
+.tasksContainer .checkbox {
   height: 24px;
   width: 24px;
   border: 3px solid #7b7b7b;
@@ -169,7 +169,7 @@
   margin-right: 2%;
 }
 
-.incompleteTasks .tasksContainer .checkbox input {
+.tasksContainer .checkbox input {
   accent-color: #7b7b7b;
   height: 20px;
   width: 20px;
@@ -184,7 +184,7 @@
   z-index: 1;
 }
 
-.incompleteTasks .tasksContainer p {
+.tasksContainer p {
   background-color: transparent;
   border: none;
   outline: none;
@@ -205,6 +205,7 @@
 .incompleteTasks .tasksContainer textarea:focus {
   border-bottom: 1px solid #7b7b7b;
 }
+
 .incompleteTasks .tasksContainer textarea {
   background-color: transparent;
   border: none;
@@ -224,8 +225,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
-.incompleteTasks .tasksContainer .actions {
+.tasksContainer .actions {
   height: 30px;
   width: 75px;
   display: -webkit-box;
@@ -233,18 +233,17 @@
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: right;
   line-height: 30px;
   position: absolute;
   right: 0;
 }
 
-.incompleteTasks .tasksContainer .actions i {
+.tasksContainer .actions i {
   font-size: 30px;
   color: #7b7b7b;
   cursor: pointer;
 }
-
 
 .taskSingle[task_active='active'] p{
   display: none !important;
@@ -252,4 +251,13 @@
 
 .taskSingle[task_active='active'] textarea{
   display: block !important;
+}
+
+.completedTasks{
+  margin-top: 40px;
+  width: 100%;
+  height: auto;
+  max-height: 350px;
+  overflow: auto;
+  padding: 0 15px;
 }

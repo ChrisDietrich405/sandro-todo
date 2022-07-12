@@ -3,6 +3,7 @@ import Header from "../Header";
 import InputContainer from "../InputContainer";
 import styles from "../styles.module.css";
 import IncompleteTasks from "../IncompleteTasks";
+import CompletedTasks from "../CompletedTasks";
 
 const TodoContainer = () => {
   return (
@@ -10,6 +11,7 @@ const TodoContainer = () => {
       <Header />
       <InputContainer />
       <IncompleteTasks />
+      <CompletedTasks />
     </div>
   );
 };

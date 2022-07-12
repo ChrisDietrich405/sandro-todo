@@ -1,35 +1,30 @@
 import React, { useState } from "react";
 import styles from "../styles.module.css";
+import { useSelector } from "react-redux";
+import TaskSingle from "../TaskSingle";
 
 const IncompleteTasks = () => {
   const [taskActive, setTaskActive] = useState(false);
 
-  const handleTaskActive = () => {
-    setTaskActive(!taskActive);
-  };
+  const data = useSelector((state) => state);
+  var incompletedTasks = data.incompletedTasks
+
+  const newArray = data.addData;
+
+  if(newArray) {
+    console.log("hello")
+  } else {
+    incompletedTasks = data.incompletedTasks
+  }
 
 
   return (
     <div className={styles.incompleteTasks}>
       <h3>TO DO</h3>
       <div className={styles.tasksContainer}>
-        <div className={styles.taskSingle} task_active={taskActive ? 'active' : ''} >
-          <form className={styles.tasksForm}>
-            <div className={styles.checkbox}>
-              <input type="checkbox" name="check" />
-            </div>
-            <p>Lorem ipsum dolor sit.</p>
-            <textarea name="tasks" onBlur={()=>{console.log("BLUR AGAIN")}} >Lorem ipsum dolor sit.</textarea>
-            <div className={styles.actions}>
-              <div className="pencil">
-                <i className="bx bxs-pencil" onClick={handleTaskActive}></i>
-              </div>
-              <div className="trashCan">
-                <i className="bx bxs-trash-alt"></i>
-              </div>
-            </div>
-          </form>
-        </div>
+        {incompletedTasks.map((task) => {
+          return <TaskSingle {...task} taskStatus="incompleted" />;
+        })}
       </div>
     </div>
   );
