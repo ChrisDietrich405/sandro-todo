@@ -1,29 +1,26 @@
 import React, { useState } from "react";
 import styles from "../styles.module.css";
-import { useSelector } from "react-redux";
 import TaskSingle from "../TaskSingle";
+import { useSelector, useDispatch } from "react-redux";
 
 const IncompleteTasks = () => {
+  
   const [taskActive, setTaskActive] = useState(false);
 
   const data = useSelector((state) => state);
-  var incompletedTasks = data.incompletedTasks
 
-  const newArray = data.addData;
-
-  if(newArray) {
-    console.log("hello")
+  if(data.updatedIncompleted) {
+    var incompletedTasks = data.updatedIncompleted;
   } else {
-    incompletedTasks = data.incompletedTasks
+    var incompletedTasks = data.incompletedTasks
   }
-
 
   return (
     <div className={styles.incompleteTasks}>
       <h3>TO DO</h3>
       <div className={styles.tasksContainer}>
         {incompletedTasks.map((task) => {
-          return <TaskSingle {...task} taskStatus="incompleted" />;
+          return <TaskSingle key={task.id} {...task} taskStatus="incompleted" />;
         })}
       </div>
     </div>

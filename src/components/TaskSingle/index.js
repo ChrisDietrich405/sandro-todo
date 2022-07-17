@@ -2,10 +2,10 @@ import React from "react";
 import styles from "../styles.module.css";
 
 const TaskSingle = (props) => {
-  const { id, taskName, taskStatus } = props;
+  const { taskName, taskStatus } = props;
 
   return (
-    <div key={id} className={styles.taskSingle}>
+    <div className={styles.taskSingle}>
       <form className={styles.tasksForm}>
         <div className={styles.checkbox}>
           <input

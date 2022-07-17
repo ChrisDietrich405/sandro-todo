@@ -26,9 +26,8 @@ const INITIAL_STATE = {
 const toDoReducers = (state = INITIAL_STATE, actions) => {
   switch (actions.type) {
     case "ADD_TASK":
-      
-      
-      return { ...state, addData: "add data" };
+      return { ...state, updatedIncompleted: actions.updatedArray };
+
     default:
       return state;
   }

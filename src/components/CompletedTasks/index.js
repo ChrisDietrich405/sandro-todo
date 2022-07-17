@@ -11,7 +11,7 @@ const CompletedTasks = () => {
       <div className={styles.tasksContainer}>
         {completedTasks.map((task) => {
           return (
-            <TaskSingle {...task} taskStatus = 'completed' />
+            <TaskSingle key={task.id} {...task} taskStatus = 'completed' />
           );
         })}
       </div>
